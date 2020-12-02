@@ -1,5 +1,5 @@
 ﻿#AOC Lesson 1
-$numbers=Get-Content ./Day1/puzzleinput1.txt|%{[System.int32]::Parse($_)}|Sort-Object
+$numbers=Get-Content ./Day1/puzzleinput1.txt|ForEach-Object{[System.int32]::Parse($_)}|Sort-Object
 $i=0
 $j=$numbers.Count-1
 while ($true){
