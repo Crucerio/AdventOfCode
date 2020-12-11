@@ -1,3 +1,5 @@
+$stopwatch =  [System.Diagnostics.Stopwatch]::StartNew()
+$stopwatch.Start()
 function Get-LastAccumulator {
     param(
         [array]$puzzleinput,
@@ -49,6 +51,8 @@ foreach($op in $answer1.List){
     $answer2 = Get-LastAccumulator -puzzleinput $puzzleinput -x 0 -acc 0
     [array]$puzzleinput = Get-Content ./2020/Day8/puzzleinput8.txt
     if($null -eq $answer2.instruction){
-        return $answer2
+    
+    $stopwatch.Elapsed| select *
+    $answer2| select *
     }
 }
