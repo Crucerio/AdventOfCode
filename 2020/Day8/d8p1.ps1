@@ -52,7 +52,7 @@ foreach($op in $answer1.List){
     [array]$puzzleinput = Get-Content ./2020/Day8/puzzleinput8.txt
     if($null -eq $answer2.instruction){
     
-    $stopwatch.Elapsed| select *
-    $answer2| select *
+    $stopwatch.Elapsed| Select-Object *
+    $answer2| Select-Object *
     }
 }

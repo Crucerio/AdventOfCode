@@ -1,9 +1,6 @@
-$stopwatch =  [System.Diagnostics.Stopwatch]::StartNew()
-$stopwatch.Start()
-[array]$puzzleinput = Get-Content ./2020/Day9/puzzleinput9.txt|%{[Int64]::parse($_)}
+[array]$puzzleinput = Get-Content ./2020/Day9/puzzleinput9.txt|ForEach-Object{[Int64]::parse($_)}
 $preamble = 25
 $i = 0
-
 for ($i = $preamble; $i -lt $puzzleinput.Count; $i++) {
     $att=$false
     $pfui = $puzzleinput[($i - $preamble)..($i - 1)]
@@ -33,6 +30,4 @@ while($answer2sum -ne $answer1){
         {$_ -lt $answer1} { $h++ }
         {$_ -gt $answer1} { $l++ }
     }
-
 }
-$stopwatch.Elapsed| select *
