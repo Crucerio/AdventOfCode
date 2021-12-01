@@ -14,3 +14,15 @@ for($i=0;$i -lt $sortedpuzzle.Count;$i++){
 $answer1=$dist1*$dist3
 $answer1
 
+
+function Get-Ways($position,$candidates){
+    $return =0
+    foreach ($candidate in $candidates){
+        if (($candidate - $position) -gt 3){
+            return $return
+        }else {
+            $return++
+        }
+    }
+}
+Get-Ways -position 3 -candidates @(7,7,7,7,7)
