@@ -1,4 +1,4 @@
-﻿
+﻿Import-Module ./Write-Answer.psm1 -force
 $puzzle = Get-Content "./2021/2021_d2_input1.txt"
 $x=0
 $y=0
@@ -9,8 +9,8 @@ foreach ($p in $puzzle) {
         up { $y-=($p -split " ")[1] }
     }
 }
-"Answerpuzzle 1"
-$x*$y
+$answer=$x*$y
+Write-Answer -Expected 2272262 -Answer $answer -part 1
 
 $aim=0
 $x=0
@@ -25,5 +25,5 @@ foreach ($p in $puzzle) {
         up { $aim-=($p -split " ")[1] }
     }
 }
-"Answerpuzzle 2"
-$x*$y
+$answer=$x*$y
+Write-Answer -Expected 2134882034 -Answer $answer -part 2
